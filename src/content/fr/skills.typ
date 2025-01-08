@@ -3,13 +3,10 @@
 #cvSection("Technologies")
 
 #cvSkill(
-  type: [Langages],
-  tags: ("Python", "TypeScript", "React", "HTML + CSS")
+  type: [Langages], tags: ("TypeScript", "Dart/Flutter", "Nix", "C#", "PHP", "C"),
 )
-
 #divider()
 
 #cvSkill(
-  type: [Outils],
-  tags: ("Unix", "Git", "PostgreSQL")
+  type: [Outils], tags: ("Unix", "Git", "Docker", "PostgreSQL", "MariaDB"),
 )

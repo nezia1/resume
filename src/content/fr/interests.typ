@@ -2,14 +2,8 @@
 
 #cvSection("Intérêts personnels")
 
-#cvInterestTags(
-    tags: ("Logiciel libre", "Musique", "Lecture", "Sport"),
-)
+#cvInterestTags(tags: ("Logiciel libre", "Musique"))
 
 #divider()
 
-#cvInterestDescription(
-    description: list(
-        [#lorem(15)]
-    )
-)
+#cvInterestDescription(description: list([Contributeur/mainteneur NixOS]))

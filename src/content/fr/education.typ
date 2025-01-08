@@ -1,28 +1,25 @@
 #import "../../template.typ": *
 
+#import "../../template.typ": *
+
 #cvSection("Formation")
 
 #cvEntry(
-    title: [Master en informatique],
-    organisation: [La même université],
-    logo: "",
-    date: [2016 - 2018],
-    location: [France],
-    description: list(
-        [#lorem(20)],
-    ),
-    tags: ("Systèmes de bases de données", "Réseaux informatiques", "Cybersécurité")
+  title: [Bachelor - Informatique et Systèmes de Communication], organisation: [HEPIA], logo: "", date: [2024 - Présent], location: [Genève], description: list(
+    [Ingénierie logicielle], [Algorithmes et structures de données], [Réseaux et télécommunications],
+  ),
 )
 
 #divider()
 
 #cvEntry(
-    title: [Licence en informatique],
-    organisation: [Une certaine université],
-    logo: "",
-    date: [2014 - 2016],
-    location: [France],
-    description: list(
-        [#lorem(20)],
-    ),
+  title: [Technicien ES - Développement d'applications], organisation: [CFPT], logo: "", date: [2022 – 2024], location: [Geneva], description: list(
+    [Développement C\#], [Approfondissement des connaissances CFC], [Développement mobile], [DevOps (CI/CD)],
+  ),
+)
+
+#divider()
+
+#cvEntry(
+  title: [CFC - Développement d'applications], organisation: [CFPT], logo: "", date: [2017 – 2021], location: [Genève], description: list([Développement C\#], [Développement web PHP], [Bases de données SQL]),
 )
