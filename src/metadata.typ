@@ -14,7 +14,7 @@
 /* Layout settings */
 #let cvLanguage = ""
 
-#let accentColor = "burgundy"
+#let accentColor = "lavender"
 
 #let profilePhoto = "images/avatar.png" // Leave empty if profil photo is not needed
 

@@ -28,7 +28,7 @@
   lightGray: rgb("#ededef"), mediumGray: rgb("#78787e"), darkGray: rgb("#3c3c42"),
 )
 
-#let accentColors = (burgundy: rgb("#800020"))
+#let accentColors = (burgundy: rgb("#800020"), lavender: rgb("#cba2e8"))
 
 #let chosenAccentColor = {
   if type(accentColor) == color {
