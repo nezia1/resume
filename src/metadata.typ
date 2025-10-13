@@ -8,7 +8,7 @@
 )
 
 #let headerQuoteInternational = (
-  "": [Software developer looking for a full time job], "en": [Software developer looking for a full time job], "fr": [Développeur logiciel cherchant un emploi à temps plein],
+  "": [Software developer looking for a part-time job], "en": [Software developer looking for a part-time job], "fr": [Développeur logiciel cherchant un emploi en alternance],
 )
 
 /* Layout settings */
