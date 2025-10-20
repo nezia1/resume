@@ -25,7 +25,9 @@
 #let textFont = ("Source Sans Pro", "Symbols Nerd Font")
 
 #let textColors = (
-  lightGray: rgb("#ededef"), mediumGray: rgb("#78787e"), darkGray: rgb("#3c3c42"),
+  lightGray: rgb("#ededef"),
+  mediumGray: rgb("#78787e"),
+  darkGray: rgb("#3c3c42"),
 )
 
 #let accentColors = (burgundy: rgb("#800020"), lavender: rgb("#cba2e8"))
@@ -39,37 +41,56 @@
 }
 
 #let divider() = align(
-  center, line(length: 95%, stroke: (paint: textColors.mediumGray, dash: "dashed")),
+  center,
+  line(length: 95%, stroke: (paint: textColors.mediumGray, dash: "dashed")),
 )
 
-#let headerFirstNameStyle(str) = { text(font: headerFont, size: 28pt, weight: "light", str) }
+#let headerFirstNameStyle(str) = {
+  text(font: headerFont, size: 28pt, weight: "light", str)
+}
 
-#let headerLastNameStyle(str) = { text(font: headerFont, size: 28pt, weight: "bold", str) }
+#let headerLastNameStyle(str) = {
+  text(font: headerFont, size: 28pt, weight: "bold", str)
+}
 
 #let headerInfoStyle(str) = { text(font: headerFont, size: 9pt, str) }
 
 #let headerQuoteStyle(str) = {
   text(
-    size: 12pt, weight: "medium", style: "italic", fill: chosenAccentColor, str,
+    size: 12pt,
+    weight: "medium",
+    style: "italic",
+    fill: chosenAccentColor,
+    str,
   )
 }
 
-#let sectionTitleStyle(str, color: black) = { text(size: 16pt, weight: "bold", fill: color, str) }
+#let sectionTitleStyle(str, color: black) = {
+  text(size: 16pt, weight: "bold", fill: color, str)
+}
 
 #let entryA1Style(str) = { text(size: 12pt, weight: "bold", str) }
 
 #let entryA2Style(str) = {
   align(
-    right, text(weight: "medium", fill: chosenAccentColor, style: "oblique", str),
+    right,
+    text(weight: "medium", fill: chosenAccentColor, style: "oblique", str),
   )
 }
 
-#let entryB1Style(str) = { text(size: 11pt, fill: chosenAccentColor, weight: "medium", smallcaps(str)) }
+#let entryB1Style(str) = {
+  text(size: 11pt, fill: chosenAccentColor, weight: "medium", smallcaps(str))
+}
 
 #let entryB2Style(str) = {
   align(
-    right, text(
-      size: 11pt, weight: "medium", fill: textColors.mediumGray, style: "oblique", str,
+    right,
+    text(
+      size: 11pt,
+      weight: "medium",
+      fill: textColors.mediumGray,
+      style: "oblique",
+      str,
     ),
   )
 }
@@ -87,25 +108,41 @@
 #let tagListStyle(tags) = {
   for tag in tags {
     box(
-      inset: (x: 0.3em), outset: (y: 0.3em), fill: textColors.lightGray, radius: 3pt, tagStyle(tag),
+      inset: (x: 0.3em),
+      outset: (y: 0.3em),
+      fill: textColors.lightGray,
+      radius: 3pt,
+      tagStyle(tag),
     )
     h(5pt)
   }
 }
 
-#let letterHeaderNameStyle(str) = { text(fill: chosenAccentColor, weight: "bold", str) }
+#let letterHeaderNameStyle(str) = {
+  text(fill: chosenAccentColor, weight: "bold", str)
+}
 
-#let letterHeaderAddressStyle(str) = { text(fill: textColors.mediumGray, size: 0.9em, smallcaps(str)) }
+#let letterHeaderAddressStyle(str) = {
+  text(fill: textColors.mediumGray, size: 0.9em, smallcaps(str))
+}
 
 #let letterDateStyle(str) = { text(size: 0.9em, style: "italic", str) }
 
-#let letterSubjectStyle(str) = { text(fill: chosenAccentColor, weight: "bold", underline(str)) }
+#let letterSubjectStyle(str) = {
+  text(fill: chosenAccentColor, weight: "bold", underline(str))
+}
 
 /* Sections */
 #let cvHeader(align: left, hasPhoto: false) = {
   let makeHeaderInfo() = {
     let personalInfoIcons = (
-      phone: "󰏲", email: "󰇮", homepage: "󰖟", github: "󰊤", gitlab: "󰮠", location: "󰍎", extraInfo: "",
+      phone: "󰏲",
+      email: "󰇮",
+      homepage: "󰖟",
+      github: "󰊤",
+      gitlab: "󰮠",
+      location: "󰍎",
+      extraInfo: "",
     )
     let n = 1
     for (k, v) in personalInfo {
@@ -144,7 +181,11 @@
   }
 
   let makeHeaderNameSection() = table(
-    columns: 1fr, inset: 0pt, stroke: none, row-gutter: 4mm, [#headerFirstNameStyle(firstName) #h(5pt) #headerLastNameStyle(lastName)], [#headerQuoteStyle(languageSwitch(headerQuoteInternational))], [#headerInfoStyle(makeHeaderInfo())],
+    columns: 1fr, inset: 0pt, stroke: none, row-gutter: 4mm, [#headerFirstNameStyle(
+        firstName,
+      ) #h(5pt) #headerLastNameStyle(lastName)], [#headerQuoteStyle(
+      languageSwitch(headerQuoteInternational),
+    )], [#headerInfoStyle(makeHeaderInfo())],
   )
 
   let makeHeaderPhotoSection() = {
@@ -156,13 +197,24 @@
   }
 
   let makeHeader(leftComp, rightComp, columns, align) = table(
-    columns: columns, inset: 0pt, stroke: none, column-gutter: 15pt, align: align + horizon, { leftComp }, { rightComp },
+    columns: columns, inset: 0pt, stroke: none, column-gutter: 15pt, align: align
+      + horizon, { leftComp }, { rightComp },
   )
 
   if hasPhoto {
-    makeHeader(makeHeaderNameSection(), makeHeaderPhotoSection(), (auto, 20%), align)
+    makeHeader(
+      makeHeaderNameSection(),
+      makeHeaderPhotoSection(),
+      (auto, 20%),
+      align,
+    )
   } else {
-    makeHeader(makeHeaderNameSection(), makeHeaderPhotoSection(), (auto, 0%), align)
+    makeHeader(
+      makeHeaderNameSection(),
+      makeHeaderPhotoSection(),
+      (auto, 0%),
+      align,
+    )
   }
 }
 
@@ -173,7 +225,13 @@
 }
 
 #let cvEntry(
-  title: "Title", organisation: "Organisation", date: "Date", location: "Location", description: "Description", logo: "", tags: (),
+  title: "Title",
+  organisation: "Organisation",
+  date: "Date",
+  location: "Location",
+  description: "Description",
+  logo: "",
+  tags: (),
 ) = {
   let ifOrganisationFirst(condition, field1, field2) = {
     return if condition { field1 } else { field2 }
@@ -190,12 +248,35 @@
     return if logo == "" [] else { image(path, width: 100%) }
   }
   table(
-    columns: (ifLogo(logo, 4%, 0%), 1fr), inset: 0pt, stroke: none, align: horizon, column-gutter: ifLogo(logo, 4pt, 0pt), setLogoContent(logo), table(
-      columns: (1fr, auto), inset: 0pt, stroke: none, row-gutter: 8pt, align: auto, {
-        entryA1Style(ifOrganisationFirst(varEntryOrganisationFirst, organisation, title))
-      }, { entryA2Style(date) }, {
-        entryB1Style(ifOrganisationFirst(varEntryOrganisationFirst, title, organisation))
-      }, { entryB2Style(location) },
+    columns: (ifLogo(logo, 4%, 0%), 1fr),
+    inset: 0pt,
+    stroke: none,
+    align: horizon,
+    column-gutter: ifLogo(logo, 4pt, 0pt),
+    setLogoContent(logo),
+    table(
+      columns: (1fr, auto),
+      inset: 0pt,
+      stroke: none,
+      row-gutter: 8pt,
+      align: auto,
+      {
+        entryA1Style(ifOrganisationFirst(
+          varEntryOrganisationFirst,
+          organisation,
+          title,
+        ))
+      },
+      { entryA2Style(date) },
+
+      {
+        entryB1Style(ifOrganisationFirst(
+          varEntryOrganisationFirst,
+          title,
+          organisation,
+        ))
+      },
+      { entryB2Style(location) },
     ),
   )
   descriptionStyle(description)
@@ -210,7 +291,12 @@
 
 #let cvLanguage(name: "Name", info: "Info") = {
   table(
-    columns: (25%, 1fr), inset: 0pt, column-gutter: 10pt, stroke: none, align: horizon, languageNameStyle(name), languageInfoStyle(info),
+    columns: (25%, 1fr),
+    inset: 0pt,
+    column-gutter: 10pt,
+    stroke: none,
+    align: horizon,
+    languageNameStyle(name), languageInfoStyle(info),
   )
 }
 
@@ -223,7 +309,11 @@
 }
 
 #let letterHeader(
-  myAddress: "Your Address Here", recipientName: "Recipient Name Here", recipientAddress: "Recipient Address Here", date: "Today's Date", subject: "Subject: Hey!",
+  myAddress: "Your Address Here",
+  recipientName: "Recipient Name Here",
+  recipientAddress: "Recipient Address Here",
+  date: "Today's Date",
+  subject: "Subject: Hey!",
 ) = {
   letterHeaderNameStyle(firstName + " " + lastName)
   v(1pt)
@@ -236,7 +326,8 @@
   letterDateStyle(date)
   v(1pt)
   letterSubjectStyle(subject)
-  linebreak(); linebreak()
+  linebreak()
+  linebreak()
 }
 
 #let letterSignature(path) = {
@@ -250,7 +341,8 @@
   set par(leading: 0.75em)
   set align(left)
   set page(
-    paper: "a4", margin: (left: 1.2cm, right: 1.2cm, top: .6cm, bottom: 1.2cm),
+    paper: "a4",
+    margin: (left: 1.2cm, right: 1.2cm, top: .6cm, bottom: 1.2cm),
   )
   doc
 }
