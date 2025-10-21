@@ -2,6 +2,7 @@
   outputs = {
     self,
     nixpkgs,
+    typst-fontawesome,
     ...
   }: let
     forAllSystems = f: nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed (system: f nixpkgs.legacyPackages.${system});
@@ -35,9 +36,13 @@
       };
     });
 
-    packages = forAllSystems (pkgs: {
+    packages = forAllSystems (pkgs: let
+      packageCache = pkgs.linkFarm "typst-packages" {
+        "preview/fontawesome/0.6.0" = typst-fontawesome;
+      };
+    in {
       english = pkgs.callPackage ./package.nix {
-        inherit version src;
+        inherit version src packageCache;
       };
       french = self.packages.${pkgs.system}.english.override {lang = "fr";};
       default = self.packages.${pkgs.system}.english;
@@ -83,6 +88,11 @@
       });
   };
   inputs = {
+    self.submodules = true;
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    typst-fontawesome = {
+      url = "github:duskmoon314/typst-fontawesome/v0.6.0";
+      flake = false;
+    };
   };
 }

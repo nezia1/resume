@@ -18,7 +18,25 @@
     },
     "root": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "typst-fontawesome": "typst-fontawesome"
+      }
+    },
+    "typst-fontawesome": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1753672079,
+        "narHash": "sha256-LjF+dcbL9zu+1MnfFSBaJZRdy9PxdllANdC2CQmaS3A=",
+        "owner": "duskmoon314",
+        "repo": "typst-fontawesome",
+        "rev": "fee2b7bde0e0f56a19a531fdfdd410cdf248936f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "duskmoon314",
+        "ref": "v0.6.0",
+        "repo": "typst-fontawesome",
+        "type": "github"
       }
     }
   },

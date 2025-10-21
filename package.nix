@@ -7,9 +7,10 @@
   source-sans,
   roboto,
   font-awesome,
+  packageCache,
   version ? "",
   src ? null,
-  lang ? "",
+  lang ? "en",
 }: let
   l = lib.optionalString (lang != "") "_${lang}";
 in
@@ -22,8 +23,8 @@ in
     configurePhase = ''
       runHook preConfigure
 
-      substituteInPlace src/metadata.typ \
-        --replace 'cvLanguage = ""' 'cvLanguage = "${lang}"'
+      substituteInPlace metadata.toml \
+        --replace-fail 'language = "en"' 'language = "${lang}"'
 
       runHook postConfigure
     '';
@@ -40,6 +41,7 @@ in
     buildPhase = ''
       runHook preBuild
 
+      export TYPST_PACKAGE_PATH=${packageCache}
       typst compile cv.typ
 
       runHook postBuild
@@ -49,7 +51,7 @@ in
       runHook preInstall
 
       mkdir -p $out
-      mv src/*.pdf $out
+      mv *.pdf $out
       mv $out/cv.pdf $out/CV${l}_AnthonyRodriguez.pdf
 
       runHook postInstall
