@@ -1,0 +1,3 @@
+[submodule "brilliant-cv"]
+	path = brilliant-cv
+	url = https://github.com/mintyfrankie/brilliant-CV.git

@@ -23,8 +23,10 @@
         ];
         shellHook = let
           fonts = pkgs.lib.makeSearchPath "" [
+            pkgs.source-sans
             pkgs.source-sans-pro
-            pkgs.nerd-fonts.symbols-only
+            pkgs.roboto
+            pkgs.font-awesome
           ];
         in ''
           export TYPST_FONT_PATHS=${fonts}
