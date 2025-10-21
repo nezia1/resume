@@ -4,6 +4,9 @@
   typst,
   source-sans-pro,
   nerd-fonts,
+  source-sans,
+  roboto,
+  font-awesome,
   version ? "",
   src ? null,
   lang ? "",
@@ -28,12 +31,16 @@ in
     TYPST_FONT_PATHS = lib.makeSearchPath "" [
       source-sans-pro
       nerd-fonts.symbols-only
+      source-sans
+      source-sans-pro
+      roboto
+      font-awesome
     ];
 
     buildPhase = ''
       runHook preBuild
 
-      typst compile src/cv.typ
+      typst compile cv.typ
 
       runHook postBuild
     '';

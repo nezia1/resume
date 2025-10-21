@@ -9,7 +9,6 @@
   }
 }
 
-
 #show: cv.with(
   metadata,
   profilePhoto: "",
@@ -17,9 +16,7 @@
 )
 #importModules((
   "education",
-  "professional",
   "projects",
-  // "certificates",
-  "publications",
+  "professional",
   "skills",
 ))

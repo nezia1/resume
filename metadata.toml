@@ -7,7 +7,7 @@ language = "en"
 [layout]
     # Optional values: skyblue, red, nephritis, concrete, darknight
     # You can also use a custom color by hex code i.e. "#1E90FF"
-    awesome_color = "skyblue"
+    awesome_color = "darknight" 
 
     # Skips are for controlling the spacing between sections and entries
     before_section_skip = "1pt"
@@ -36,10 +36,10 @@ language = "en"
 
     [layout.entry]
         # Decide if you want to put your company in bold or your position in bold
-        display_entry_society_first = true
+        display_entry_society_first = false
 
         # Decide if you want to display organisation logo or not
-        display_logo = true
+        display_logo = false
     [layout.footer]
         display_page_counter = true  # or false if you don't want page numbers
 
@@ -49,30 +49,24 @@ language = "en"
 
     # Decide if you want to inject keywords or not
     inject_keywords = true
-    injected_keywords_list = ["Data Analyst", "GCP", "Python", "SQL", "Tableau"]
+    injected_keywords_list = ["Developer", "Développeur", "C#", "Javascript", "Typescript", "DevOps", "Git", "Docker"]
 
 [personal]
-    first_name = "John"
-    last_name = "Doe"
+    first_name = "Anthony"
+    last_name = "Rodriguez"
 
     # The order of this section will affect how the entries are displayed
     # The custom value is for any additional information you want to add, name it as custom-1, custom-2, etc.
     [personal.info]
-        github = "yunanwg"
-        phone = "+33 6 12 34 56 78"
-        email = "john.doe@me.org"
-        linkedin = "johndoe"
+        github = "nezia1"
+        phone = "+33 6 37 44 33 91"
+        email = "anthony@nezia.dev"
+        linkedin = "nezia1"
         # gitlab = "yunanwg"
-        # homepage = "jd.me.org"
+        homepage = "nezia.dev"
         # orcid = "0000-0000-0000-0000"
         # researchgate = "John-Doe"
         # extraInfo = "I am a cool kid"
-        [personal.info.custom-1]
-            # image = "" # Example: image("./path/to/image.png")
-            awesomeIcon = "graduation-cap" # Example: "graduation-cap" see https://typst.app/universe/package/fontawesome/
-            text = "PhD"
-            link = "https://www.example.com"
-
 # add a new section if you want to include the language of your choice
 # i.e. [[lang.ru]]
 # each section must contains the following fields
