@@ -52,6 +52,7 @@
       pkgs.treefmt.withConfig {
         settings = {
           tree-root-file = "flake.nix";
+          excludes = "brilliant-cv";
           formatter = {
             alejandra = {
               command = "alejandra";
