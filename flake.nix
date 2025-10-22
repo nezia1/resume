@@ -74,6 +74,11 @@
               options = ["--inplace"];
               includes = ["*.typ"];
             };
+            tombi = {
+              command = "tombi";
+              options = ["format"];
+              includes = ["*.toml"];
+            };
           };
         };
 
@@ -84,6 +89,7 @@
             alejandra
             deadnix
             typstyle
+            tombi
             ;
         };
       });
