@@ -7,7 +7,7 @@
 #cvSection("Education")
 
 #cvEntry(
-  title: [Bachelor’s Degree - Computer Science],
+  title: [Bachelor of Science - Computer Science],
   society: [HEPIA],
   date: [2024 - Present],
   location: [Geneva],

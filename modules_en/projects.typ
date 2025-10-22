@@ -8,6 +8,19 @@
 #cvSection("Projects")
 
 #cvEntry(
+  title: [Open source contributions],
+  society: [GitHub],
+  date: [2025 - Present],
+  location: [Home],
+  description: list(
+    [Hjem (contributor): a declarative \$HOME management system with Nix],
+    [Hjem Rum (co-maintainer): A Hjem modules collection],
+    [Miscellaneous Nix related projects],
+  ),
+)
+
+
+#cvEntry(
   title: [Missive],
   society: [CFPT],
   date: [January 2024 - June 2024],
