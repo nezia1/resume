@@ -1,0 +1,141 @@
+#:schema https://raw.githubusercontent.com/yunanwg/brilliant-CV/main/metadata.toml.schema.json
+
+# Set the output language
+# INFO: value must matches folder suffix; i.e "zh" -> "./modules_zh"
+language = "en"
+
+[layout]
+# Optional values: skyblue, red, nephritis, concrete, darknight
+# You can also use a custom color by hex code i.e. "#1E90FF"
+awesome_color = "darknight"
+# Skips are for controlling the spacing between sections and entries
+before_section_skip = "1pt"
+before_entry_skip = "1pt"
+before_entry_description_skip = "1pt"
+# Optional: sets paper size and margins. Possible values: a4 (default), us-letter
+paper_size = "a4"
+
+# Optional: sets the width of the right column of a cvEntry. If not set, values known to work well are used
+# date_width = "3.6cm"
+
+[layout.fonts]
+regular_fonts = ["Source Sans Pro", "Source Sans 3"]
+header_font = "Roboto"
+
+[layout.header]
+# Optional values: left, center, right
+header_align = "left"
+# Decide if you want to display profile photo or not
+display_profile_photo = false
+# Radius in % to clip profile photo at
+profile_photo_radius = "50%"
+info_font_size = "10pt"
+
+[layout.entry]
+# Decide if you want to put your company in bold or your position in bold
+display_entry_society_first = false
+# Decide if you want to display organisation logo or not
+display_logo = false
+
+[layout.footer]
+display_page_counter = true  # or false if you don't want page numbers
+
+[inject]
+# Decide if you want to inject AI prompt or not
+inject_ai_prompt = false
+# Decide if you want to inject keywords or not
+inject_keywords = true
+injected_keywords_list = [
+  "Developer",
+  "Développeur",
+  "C#",
+  "Javascript",
+  "Typescript",
+  "DevOps",
+  "Git",
+  "Docker",
+  "React",
+  "React.js",
+  "ReactJS",
+  "Vue.js",
+  "Vue",
+  "Flutter",
+  "Node.js",
+  "NodeJS",
+  "REST API",
+  "API",
+  "API REST",
+  "PostgreSQL",
+  "MySQL",
+  "SQL",
+  "NoSQL",
+  "Database",
+  "CI/CD",
+  "GitLab CI",
+  "GitLab",
+  "Continuous Integration",
+  "Continuous Deployment",
+  "Linux",
+  "Nix",
+  "JWT",
+  "Cryptographie",
+  "Signal Protocol",
+  "Authentication",
+  "Authentification",
+  "Encryption",
+  "Chiffrement",
+  "Agile",
+  "Full Stack",
+  "Backend",
+  "Frontend",
+  "Software Engineer",
+  "Ingénieur Logiciel",
+  "Software Development",
+  "Développement Logiciel",
+  "Alternance",
+  "Apprenticeship",
+  "Stage",
+  "Internship",
+  "Documentation",
+  "Unit Testing",
+  "Tests Unitaires",
+  "Cross-platform",
+  "Multiplateforme",
+  "PHP",
+  "Dart",
+  "C",
+  "GitHub",
+  "Gitlab",
+  "Version Control",
+  "Contrôle de Version",
+]
+
+[personal]
+first_name = "Anthony"
+last_name = "Rodriguez"
+
+# The order of this section will affect how the entries are displayed
+# The custom value is for any additional information you want to add, name it as custom-1, custom-2, etc.
+[personal.info]
+github = "nezia1"
+phone = "+33 6 37 44 33 91"
+email = "anthony@nezia.dev"
+linkedin = "nezia1"
+# gitlab = "yunanwg"
+homepage = "nezia.dev"
+
+# orcid = "0000-0000-0000-0000"
+# researchgate = "John-Doe"
+# extraInfo = "I am a cool kid"
+# add a new section if you want to include the language of your choice
+# i.e. [[lang.ru]]
+# each section must contains the following fields
+[lang.en]
+header_quote = "Software engineer looking for an apprenticeship"
+cv_footer = "Curriculum vitae"
+letter_footer = "Cover letter"
+
+[lang.fr]
+header_quote = "Ingénieur logiciel cherchant un emploi en alternance"
+cv_footer = "CV"
+letter_footer = "Lettre de motivation"

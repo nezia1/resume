@@ -2,6 +2,7 @@
   outputs = {
     self,
     nixpkgs,
+    typst-fontawesome,
     ...
   }: let
     forAllSystems = f: nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed (system: f nixpkgs.legacyPackages.${system});
@@ -23,8 +24,10 @@
         ];
         shellHook = let
           fonts = pkgs.lib.makeSearchPath "" [
+            pkgs.source-sans
             pkgs.source-sans-pro
-            pkgs.nerd-fonts.symbols-only
+            pkgs.roboto
+            pkgs.font-awesome
           ];
         in ''
           export TYPST_FONT_PATHS=${fonts}
@@ -33,9 +36,13 @@
       };
     });
 
-    packages = forAllSystems (pkgs: {
+    packages = forAllSystems (pkgs: let
+      packageCache = pkgs.linkFarm "typst-packages" {
+        "preview/fontawesome/0.6.0" = typst-fontawesome;
+      };
+    in {
       english = pkgs.callPackage ./package.nix {
-        inherit version src;
+        inherit version src packageCache;
       };
       french = self.packages.${pkgs.system}.english.override {lang = "fr";};
       default = self.packages.${pkgs.system}.english;
@@ -45,6 +52,7 @@
       pkgs.treefmt.withConfig {
         settings = {
           tree-root-file = "flake.nix";
+          excludes = "brilliant-cv";
           formatter = {
             alejandra = {
               command = "alejandra";
@@ -66,6 +74,11 @@
               options = ["--inplace"];
               includes = ["*.typ"];
             };
+            tombi = {
+              command = "tombi";
+              options = ["format"];
+              includes = ["*.toml"];
+            };
           };
         };
 
@@ -76,11 +89,17 @@
             alejandra
             deadnix
             typstyle
+            tombi
             ;
         };
       });
   };
   inputs = {
+    self.submodules = true;
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    typst-fontawesome = {
+      url = "github:duskmoon314/typst-fontawesome/v0.6.0";
+      flake = false;
+    };
   };
 }
