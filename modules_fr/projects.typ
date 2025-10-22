@@ -1,19 +1,50 @@
 // Imports
-#import "@preview/brilliant-cv:2.0.6": cvSection, cvEntry
+#import "/brilliant-cv/lib.typ": cvEntry, cvSection
 #let metadata = toml("../metadata.toml")
 #let cvSection = cvSection.with(metadata: metadata)
 #let cvEntry = cvEntry.with(metadata: metadata)
 
 
-#cvSection("Projets & Associations")
+#cvSection("Projets")
 
 #cvEntry(
-  title: [Analyste de Données Bénévole],
-  society: [ABC Organisation à But Non Lucratif],
-  date: [2019 - Présent],
-  location: [New York, NY],
+  title: [Contributions open source],
+  society: [GitHub],
+  date: [2025 - Présent],
+  location: [Home],
   description: list(
-    [Analyser les données de donateurs et de collecte de fonds pour identifier les tendances et les opportunités de croissance],
-    [Créer des visualisations de données et des tableaux de bord pour communiquer des insights au conseil d'administration],
+    [Hjem (contributeur): un système de gestion du répertoire HOME déclaratif avec Nix],
+    [Hjem Rum (co-mainteneur): une collection de modules basée sur Hjem],
+    [Divers projets dans l'écosystème Nix],
+  ),
+)
+
+#cvEntry(
+  title: [Missive],
+  society: [CFPT],
+  date: [Janvier 2024 - Juin 2024],
+  location: [Genève],
+  description: list(
+    [Implémentation d'une application de messagerie chiffrée],
+    [Utilisation du protocole Signal],
+    [Utilisation de Flutter pour le front-end (pour les builds cross-platform)],
+    [Utilisation de Typescript pour le back-end (API REST, authentification JWT)],
+    [Rédaction d'une documentation complète],
+    [Utilisation de Gitlab CI/CD pour tests unitaires et génération automatique de la documentation],
+  ),
+)
+
+#cvEntry(
+  title: [What the Git],
+  society: [Projet personnel],
+  date: [2021],
+  location: [Home],
+  description: list(
+    [Création d'une application qui explique la syntaxe Git de manière visuelle],
+    [Utilisation de React pour le front-end avec Typescript],
+    [Gestion des commandes et des descriptions depuis un fichier JSON],
+    [Traitement des arguments et des fanions pour visualisation sur la page],
+    [Génération de liens vers des articles qui explique certains termes spécifiques],
+    [Introduction au travail collaboratif via GitHub],
   ),
 )
