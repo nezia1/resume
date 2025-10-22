@@ -2,6 +2,7 @@
   outputs = {
     self,
     nixpkgs,
+    brilliant-cv,
     typst-fontawesome,
     ...
   }: let
@@ -31,6 +32,9 @@
           ];
         in ''
           export TYPST_FONT_PATHS=${fonts}
+          rm -rf brilliant-cv
+          mkdir -p brilliant-cv
+          ln -sf ${brilliant-cv}/* brilliant-cv
         '';
         name = "Resume";
       };
@@ -42,7 +46,7 @@
       };
     in {
       english = pkgs.callPackage ./package.nix {
-        inherit version src packageCache;
+        inherit version src packageCache brilliant-cv;
       };
       french = self.packages.${pkgs.system}.english.override {lang = "fr";};
       default = self.packages.${pkgs.system}.english;
@@ -95,10 +99,13 @@
       });
   };
   inputs = {
-    self.submodules = true;
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     typst-fontawesome = {
       url = "github:duskmoon314/typst-fontawesome/v0.6.0";
+      flake = false;
+    };
+    brilliant-cv = {
+      url = "github:yunanwg/brilliant-cv/v2.0.7";
       flake = false;
     };
   };

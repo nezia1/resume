@@ -1,5 +1,22 @@
 {
   "nodes": {
+    "brilliant-cv": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1758720910,
+        "narHash": "sha256-UAqDUtb/KPtZhML6XT36ChJbvK/YNcUYkhu3/deYp0o=",
+        "owner": "yunanwg",
+        "repo": "brilliant-cv",
+        "rev": "d59054b8bd086176d55266243c8820009a6604e5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yunanwg",
+        "ref": "v2.0.7",
+        "repo": "brilliant-cv",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1760878510,
@@ -18,6 +35,7 @@
     },
     "root": {
       "inputs": {
+        "brilliant-cv": "brilliant-cv",
         "nixpkgs": "nixpkgs",
         "typst-fontawesome": "typst-fontawesome"
       }

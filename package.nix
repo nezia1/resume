@@ -8,6 +8,7 @@
   roboto,
   font-awesome,
   packageCache,
+  brilliant-cv,
   version ? "",
   src ? null,
   lang ? "en",
@@ -16,9 +17,20 @@
 in
   stdenv.mkDerivation {
     pname = "nezia_cv${l}";
-    inherit src version;
+    inherit version src;
 
     nativeBuildInputs = [typst];
+
+    unpackPhase = ''
+      runHook preUnpack
+
+      cp -r ${src}/* .
+      cp -r "${brilliant-cv}" brilliant-cv
+      chmod -R u+w .
+
+      runHook postUnpack
+    '';
+    sourceRoot = ".";
 
     configurePhase = ''
       runHook preConfigure
