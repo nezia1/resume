@@ -14,7 +14,7 @@
         (substring 6 2 longDate)
       ]);
     version = mkDate (self.lastModifiedDate or "19700101");
-    src = self;
+    src = ./.;
   in {
     devShells = forAllSystems (pkgs: {
       default = pkgs.mkShell {
