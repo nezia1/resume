@@ -48,8 +48,8 @@
       english = pkgs.callPackage ./package.nix {
         inherit version src packageCache brilliant-cv;
       };
-      french = self.packages.${pkgs.system}.english.override {lang = "fr";};
-      default = self.packages.${pkgs.system}.english;
+      french = self.packages.${pkgs.stdenv.hostPlatform.system}.english.override {lang = "fr";};
+      default = self.packages.${pkgs.stdenv.hostPlatform.system}.english;
     });
 
     formatter = forAllSystems (pkgs:
