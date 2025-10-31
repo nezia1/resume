@@ -24,8 +24,9 @@ in
     unpackPhase = ''
       runHook preUnpack
 
+      mkdir -p brilliant-cv
       cp -r ${src}/* .
-      cp -r "${brilliant-cv}" brilliant-cv
+      cp -r "${brilliant-cv}/." brilliant-cv
       chmod -R u+w .
 
       runHook postUnpack
