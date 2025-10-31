@@ -62,9 +62,8 @@ in
     installPhase = ''
       runHook preInstall
 
-      mkdir -p $out
-      mv *.pdf $out
-      mv $out/cv.pdf $out/CV${l}_AnthonyRodriguez.pdf
+      ls -al
+      mv cv.pdf $out
 
       runHook postInstall
     '';
